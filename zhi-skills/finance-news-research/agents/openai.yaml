@@ -1,0 +1,4 @@
+interface:
+  display_name: "Finance News Research"
+  short_description: "Research finance news with safe source access"
+  default_prompt: "Use $finance-news-research to build a source-traced news brief from reports, articles, and transcripts."
