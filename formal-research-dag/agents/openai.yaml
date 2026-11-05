@@ -1,0 +1,7 @@
+interface:
+  display_name: "Formal Research DAG"
+  short_description: "Run structured, DAG-verified mathematical/theoretical research"
+  default_prompt: "Use $formal-research-dag to investigate this unresolved research question with structured approaches, rounds, tasks, a verified result DAG, and adaptive review consultations."
+
+policy:
+  allow_implicit_invocation: false

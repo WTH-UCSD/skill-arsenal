@@ -1,0 +1,22 @@
+question:
+  title: "{{QUESTION_TITLE}}"
+  source: "{{QUESTION_SOURCE}}"
+targets: []
+# Include only admitted nodes. A provisional Nxxx.yaml/Nxxx.tex pair remains
+# absent from this compact DAG until one of its routes clears the required
+# node audit with no unresolved material finding.
+nodes:
+  "{{NODE_ID}}":
+    title: "{{NODE_TITLE}}"
+    summary: "{{CONCRETE_SUMMARY}}"
+    role: "{{NODE_ROLE}}"
+    kind: "{{NODE_KIND}}"  # theoretical | empirical
+    status: verified
+    record: "dag/nodes/{{NODE_ID}}/{{NODE_ID}}.yaml"
+    document: "dag/nodes/{{NODE_ID}}/{{NODE_ID}}.tex"
+    supports:
+      - key: "{{SUPPORT_KEY}}"  # stable lowercase kebab-case, e.g. direct-proof
+        kind: "{{SUPPORT_KIND}}"  # proof | citation | evidence
+        requires: []
+        idea: "{{PROOF_IDEA_OR_EVIDENCE_SUMMARY}}"
+        status: verified

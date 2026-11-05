@@ -1,6 +1,0 @@
-interface:
-  display_name: "ChatGPT Pro Browser"
-  short_description: "Consult ChatGPT Pro through Chrome"
-  default_prompt: "Use $chatgpt-pro-browser through the user's signed-in Chrome session to consult ChatGPT Pro, with a verified local-file round trip when needed."
-policy:
-  allow_implicit_invocation: true

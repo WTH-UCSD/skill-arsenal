@@ -1,0 +1,4 @@
+interface:
+  display_name: "Research Ideation & Literature Frontier"
+  short_description: "Frame research questions and map literature frontier"
+  default_prompt: "Use $research-loop to turn a fuzzy idea or seed paper into sharp questions and map the literature frontier via OpenAlex and Valyu."

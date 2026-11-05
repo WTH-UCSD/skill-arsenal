@@ -1,0 +1,75 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+
+% Theoretical-node template. Replace every placeholder with valid LaTeX and
+% keep only the theorem environments used by the instantiated node.
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{assumption}{Assumption}
+
+\title{[{{NODE_ID}}] {{NODE_TITLE}}}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Setup}
+% Define every object and piece of notation needed to understand the statement.
+% Use definition environments for substantive mathematical definitions.
+{{SETUP_BODY}}
+
+\section*{Assumptions}
+% Give each assumption a precise, referenceable environment. Repeat this block
+% as needed and make the environments agree one-for-one with Nxxx.yaml.
+\begin{assumption}[{{ASSUMPTION_NAME}}]\label{ass:{{NODE_ID}}-1}
+{{ASSUMPTION_BODY}}
+\end{assumption}
+
+\section*{Main Statement}
+% Use exactly one primary theorem-like statement for this node. Replace theorem
+% by lemma, proposition, or corollary when that better reflects its mathematical
+% role; do not duplicate this presentation choice in Nxxx.yaml.
+% Quantify every object, invoke every required assumption explicitly, and state
+% the exact conclusion without relying on the originating task artifact.
+\begin{theorem}[{{STATEMENT_NAME}}]\label{stmt:{{NODE_ID}}}
+{{FORMAL_STATEMENT}}
+\end{theorem}
+
+\paragraph{Interpretation.}
+{{INTERPRETATION}}
+
+\paragraph{Proof idea.}
+{{PROOF_IDEA}}
+
+% For a citation route, use the proof environment below to state the exact
+% cited theorem and verify each hypothesis and quantifier before applying it.
+\section*{Proof}
+\begin{proof}
+{{COMPLETE_PROOF}}
+\end{proof}
+
+% With several alternative proofs, replace the single Proof idea and Proof
+% block by one descriptively titled section per proof. Put an accurate Proof
+% idea paragraph immediately before each proof environment, and make each
+% section title match the corresponding supports[].tex_section in Nxxx.yaml.
+% Whenever a proof invokes a prerequisite node, state the exact result used and
+% cite its N-ID in the mathematical prose; the YAML dependency list is not a
+% substitute for a mathematically explicit invocation. Do not render DAG
+% terms such as support-route kind, dependencies, audit paths, or provenance in
+% this mathematical document; keep them in YAML. State and prove every needed
+% intermediate claim, justify every inference, cover all relevant boundary and
+% degenerate cases, and never hide a gap behind "obvious", "standard",
+% "routine", or "left to the reader". Split long arguments into named lemmas
+% with complete proofs. The interpretation and proof idea must be correct and
+% readable, but neither may carry any logical step omitted from the proof.
+
+\end{document}

@@ -1,0 +1,27 @@
+id: "{{NODE_ID}}"
+title: "{{NODE_TITLE}}"
+role: "{{NODE_ROLE}}"
+status: candidate  # candidate | verified | withdrawn
+kind: "{{NODE_KIND}}"  # theoretical | empirical
+setup:
+  - "{{SETUP_ITEM}}"
+assumptions:
+  - "{{ASSUMPTION}}"
+conclusion: "{{CONCLUSION}}"
+summary: "{{CONCRETE_SUMMARY}}"
+origin_approaches: ["{{APPROACH_ID}}"]
+origin_tasks: ["{{ORIGIN_TASK_ID}}"]
+origin_sources:
+  - "rounds/{{ORIGIN_ROUND_ID}}/tasks/{{ORIGIN_TASK_ID}}/artifacts/{{ORIGIN_ARTIFACT}}"
+supports:
+  - key: "{{SUPPORT_KEY}}"  # stable lowercase kebab-case, e.g. direct-proof
+    kind: "{{SUPPORT_KIND}}"  # proof | citation | evidence
+    requires: []
+    idea: "{{PROOF_IDEA_OR_EVIDENCE_SUMMARY}}"
+    source: "dag/nodes/{{NODE_ID}}/{{NODE_ID}}.tex"
+    tex_section: "{{PROOF_OR_EVIDENCE_SECTION_TITLE}}"
+    # For an empirical route, list every retained output or computation used by
+    # the TeX evidence section. Leave empty for a theoretical route.
+    evidence_artifacts: []
+    status: needs_recheck  # needs_recheck | verified | invalid
+    checked_by: []

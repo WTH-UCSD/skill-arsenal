@@ -1,4 +1,0 @@
-interface:
-  display_name: "Research Loop"
-  short_description: "Frame ideas or investigate open questions with subagents"
-  default_prompt: "Use $research-loop to choose the ideation/frontier or investigation/execution lane, coordinate independent subagents, and return an evidence-backed research result."

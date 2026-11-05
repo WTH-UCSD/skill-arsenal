@@ -1,0 +1,55 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+
+% Empirical-node template. Replace every placeholder with valid LaTeX.
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Evaluation Condition}
+\newtheorem{empiricalresult}{Empirical Result}
+
+\title{[{{NODE_ID}}] {{NODE_TITLE}}}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Setup}
+% Define the fixed data, algorithms, metrics, baselines, and retained outputs.
+{{SETUP_BODY}}
+
+\section*{Evaluation Conditions}
+% Give every condition a precise, referenceable environment and make these
+% environments agree one-for-one with Nxxx.yaml.
+\begin{assumption}[{{CONDITION_NAME}}]\label{cond:{{NODE_ID}}-1}
+{{CONDITION_BODY}}
+\end{assumption}
+
+\section*{Main Statement}
+% State only the observed result under the fixed conditions. Do not turn it
+% into a universal mathematical theorem.
+\begin{empiricalresult}[{{STATEMENT_NAME}}]\label{stmt:{{NODE_ID}}}
+{{FORMAL_EMPIRICAL_STATEMENT}}
+\end{empiricalresult}
+
+\paragraph{Interpretation.}
+{{INTERPRETATION}}
+
+\paragraph{Evidence idea.}
+{{EVIDENCE_IDEA}}
+
+\section*{Evidence}
+{{COMPLETE_EVIDENCE}}
+
+% With several independent evidence routes, use one descriptively titled
+% section per route and make each title match supports[].tex_section in
+% Nxxx.yaml. Keep DAG metadata, audit paths, and provenance in YAML. Specify
+% every execution condition, retained output, calculation, uncertainty, and
+% reproduction or independent-verification step needed for a domain reader to
+% check the claim. The interpretation and evidence idea must be accurate and
+% readable, but neither may replace missing evidence.
+
+\end{document}
